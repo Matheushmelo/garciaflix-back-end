@@ -10,6 +10,7 @@ export const courseResourceOptions: ResourceOptions = {
   showProperties: ['id', 'name', 'synopsis', 'featured', 'thumbnailUrl', 'categoryId', 'createdAt', 'updatedAt']
 }
 
+//Adiciona o campo de upload de imagens para a thumbnail no AdminJs
 export const courseResourceFeatures: FeatureType[] = [
   uploadFileFeature({
     provider: {

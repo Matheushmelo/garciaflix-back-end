@@ -10,6 +10,7 @@ export const episodeResourceOptions: ResourceOptions = {
   showProperties: ['id', 'name', 'synopsis', 'courseId', 'order', 'videoUrl', 'secondsLong', 'createdAt', 'updatedAt']
 }
 
+//Adiciona o campo de upload de vídeos para os episódios no AdminJs
 export const episodeResourceFeatures: FeatureType[] = [
   uploadFileFeature({
     provider: {
