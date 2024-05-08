@@ -26,5 +26,23 @@ export const courseService = {
 
     return courseWithEpisodes
 
+  },
+
+  getRandomFeaturedCourses: async () => {
+    const featuredCourses = await Course.findAll({
+      attributes: [
+        'id',
+        'name',
+        'synopsis',
+        ['thumbnail_url', 'thumbnailUrl']
+      ],
+      where: {
+        featured: true,
+      }
+    })
+
+    const RandomFeaturedCourses = featuredCourses.sort(() => 0.5 - Math.random())
+
+    return RandomFeaturedCourses.slice(0, 3)
   }
 }
