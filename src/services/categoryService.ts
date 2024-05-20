@@ -12,7 +12,7 @@ export const categoryService = {
     })
 
     return {
-      categories: rows,
+      Category: rows,
       page,
       perPage,
       total: count

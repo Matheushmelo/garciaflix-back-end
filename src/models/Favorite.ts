@@ -1,5 +1,5 @@
 import { DataTypes, Model } from "sequelize"
-import { CourseInstance } from "./Courses"
+import { CourseInstance } from "./Course"
 import { UserInstance } from "./User"
 import { sequelize } from "../database"
 

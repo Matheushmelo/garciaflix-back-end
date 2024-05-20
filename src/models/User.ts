@@ -21,7 +21,7 @@ export interface UserInstance extends Model<User, UserCreationAttributes>, User 
   checkPassword: (password: string, callbackfn: CheckPasswordCallback) => void
 }
 
-export const User = sequelize.define<UserInstance, User>('users', {
+export const User = sequelize.define<UserInstance, User>('User', {
   id: {
     allowNull: false,
     autoIncrement: true,
