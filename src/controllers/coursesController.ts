@@ -16,6 +16,7 @@ export const coursesController = {
       }
     }
   },
+
   newest: async (req: Request, res: Response) => {
     try {
       const newestCourses = await courseService.getTop10Newest()
@@ -26,6 +27,18 @@ export const coursesController = {
       }
     }
   },
+
+  popular: async (req: Request, res: Response) => {
+    try {
+      const topTen = await courseService.getTopTenByLikes()
+      return res.json(topTen)
+    } catch (err) {
+      if (err instanceof Error) {
+        return res.status(400).json({ message: err.message })
+      }
+    }
+  },
+
   search: async (req: Request, res: Response) => {
     const { name } = req.query
     const [page, perPage] = getPaginationParams(req.query)
@@ -40,6 +53,7 @@ export const coursesController = {
       }
     }
   },
+
   show: async (req: AuthenticatedRequest, res: Response) => {
     const userId = req.user!.id
     const courseId = req.params.id
