@@ -1,12 +1,7 @@
 import { Sequelize } from "sequelize";
+import { DATABASE_URL } from "../config/enviroment";
 
-export const sequelize = new Sequelize({
-  dialect: "postgres",
-  host: "localhost",
-  port: 5432,
-  database: "garciaflix_development",
-  username: "garciaflix",
-  password: "garciaflix",
+export const sequelize = new Sequelize(DATABASE_URL,{
   define: {
     underscored: true
   }
